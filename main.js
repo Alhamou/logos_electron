@@ -1,18 +1,16 @@
 const {app, BrowserWindow} = require('electron')
+const options = require("./config/options")
 let mainWindow
 
 function createWindow () {
   
   app.allowRendererProcessReuse = true
 
-  mainWindow = new BrowserWindow({
-    width: 1500, height: 770,
-    webPreferences: { nodeIntegration: true }
-  })
+    mainWindow = new BrowserWindow(options)
 
   mainWindow.loadFile('logos/index.html')
 
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.on('closed',  () => {
     mainWindow = null
