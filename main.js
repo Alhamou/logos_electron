@@ -6,7 +6,8 @@ function createWindow () {
   
   app.allowRendererProcessReuse = true
 
-    mainWindow = new BrowserWindow(win)
+  mainWindow = new BrowserWindow(win)
+  mainWindow.setMenu(null)
 
   mainWindow.loadFile('logos/index.html')
 
