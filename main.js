@@ -1,12 +1,12 @@
 const {app, BrowserWindow} = require('electron')
-const options = require("./config/options")
+const {win} = require("./config/options")
 let mainWindow
 
 function createWindow () {
   
   app.allowRendererProcessReuse = true
 
-    mainWindow = new BrowserWindow(options)
+    mainWindow = new BrowserWindow(win)
 
   mainWindow.loadFile('logos/index.html')
 
